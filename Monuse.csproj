@@ -50,7 +50,6 @@
         <Compile Include="Considerations\Appraisals\ActionAppraisal.cs" />
         <Compile Include="Considerations\Appraisals\BooleanActionAppraisal.cs" />
         <Compile Include="Considerations\Appraisals\IAppraisal.cs" />
-        <Compile Include="Considerations\Appraisals\ProximityAxis.cs" />
         <Compile Include="Considerations\BaseConsideration.cs" />
         <Compile Include="Considerations\FixedScoreConsideration.cs" />
         <Compile Include="Considerations\IConsideration.cs" />
@@ -62,6 +61,7 @@
         <Compile Include="Reasoners\RandomScoreAboveThresholdReasoner.cs" />
         <Compile Include="Reasoners\Reasoner.cs" />
         <Compile Include="Reasoners\WeightBasedRandomReasoner.cs" />
+        <Compile Include="Utils\IPrintable.cs" />
         <Compile Include="Utils\RandomExt.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

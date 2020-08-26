@@ -1,8 +1,9 @@
 using System;
+using System.Text;
 
 namespace Monuse.Actions
 {
-    public class LogAction<T> : IAction<T>
+    public class LogAction<TContext> : IAction<TContext>
     {
         private readonly string _text;
 
@@ -12,9 +13,19 @@ namespace Monuse.Actions
         }
 
 
-        public void Execute(T context)
+        public void Execute(TContext context)
         {
             Console.WriteLine(_text);
+        }
+
+        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
+        {
+            builder.Append(ToString());
+        }
+
+        public override string ToString()
+        {
+            return $"Print: '{_text}'";
         }
     }
 }

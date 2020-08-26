@@ -5,7 +5,7 @@ namespace Monuse.Considerations
         private readonly float _threshold;
 
 
-        public AllOrNothingConsideration(string debugName, float threshold = 0) : base(debugName)
+        public AllOrNothingConsideration(string name, float threshold = 0) : base(name)
         {
             _threshold = threshold;
         }

@@ -1,18 +1,19 @@
 using System;
+using System.Text;
 
 namespace Monuse.Considerations.Appraisals
 {
     /// <summary>
     ///     wraps a Func for use as an Appraisal without having to create a subclass
     /// </summary>
-    public class BooleanActionAppraisal<T> : IAppraisal<T>
+    public class BooleanActionAppraisal<TContext> : IAppraisal<TContext>
     {
-        private readonly Func<T, bool> _appraisalAction;
+        private readonly Func<TContext, bool> _appraisalAction;
         private readonly string _name;
         private readonly float _scoreMultiplier;
 
 
-        public BooleanActionAppraisal(string name, Func<T, bool> appraisalAction, float scoreMultiplier = 1f)
+        public BooleanActionAppraisal(string name, Func<TContext, bool> appraisalAction, float scoreMultiplier = 1f)
         {
             _name = name;
             _appraisalAction = appraisalAction;
@@ -20,9 +21,14 @@ namespace Monuse.Considerations.Appraisals
         }
 
 
-        public float GetScore(T context)
+        public float GetScore(TContext context)
         {
             return _appraisalAction(context) ? _scoreMultiplier : 0f;
+        }
+
+        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
+        {
+            builder.Append(_name);
         }
 
         public override string ToString()

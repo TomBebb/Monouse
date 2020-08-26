@@ -19,7 +19,6 @@
           <e p="ActionAppraisal.cs" t="Include" />
           <e p="BooleanActionAppraisal.cs" t="Include" />
           <e p="IAppraisal.cs" t="Include" />
-          <e p="ProximityAxis.cs" t="Include" />
         </e>
         <e p="BaseConsideration.cs" t="Include" />
         <e p="FixedScoreConsideration.cs" t="Include" />
@@ -40,6 +39,7 @@
         <e p="WeightBasedRandomReasoner.cs" t="Include" />
       </e>
       <e p="Utils" t="Include">
+        <e p="IPrintable.cs" t="Include" />
         <e p="RandomExt.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />

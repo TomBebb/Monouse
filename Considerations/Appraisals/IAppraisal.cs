@@ -1,7 +1,9 @@
+using Monuse.Utils;
+
 namespace Monuse.Considerations.Appraisals
 {
-    public interface IAppraisal<T>
+    public interface IAppraisal<TContext> : IPrintable<TContext>
     {
-        float GetScore(T context);
+        float GetScore(TContext context);
     }
 }

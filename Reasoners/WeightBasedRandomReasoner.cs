@@ -5,7 +5,11 @@ using Monuse.Utils;
 
 namespace Monuse.Reasoners
 {
-    public sealed class WeightBasedRandomReasoner<T> : Reasoner<T>
+    /// <summaScory>
+    ///     Chooses a random consideration based on its weight
+    ///     </summary>
+    ///     <typeparam name="TContext"></typeparam>
+    public sealed class WeightBasedRandomReasoner<TContext> : Reasoner<TContext>
     {
         private readonly Random _rng;
         public readonly float Threshold;
@@ -17,7 +21,7 @@ namespace Monuse.Reasoners
             Threshold = threshold;
         }
 
-        protected override IConsideration<T> SelectBestConsideration(T context)
+        protected override IConsideration<TContext> SelectBestConsideration(TContext context)
         {
             var scoresAndOptions = Considerations
                 .Select(consideration => (consideration.GetScore(context), consideration))
@@ -30,8 +34,8 @@ namespace Monuse.Reasoners
             foreach (var scoreAndOption in scoresAndOptions)
             {
                 float score;
-                IConsideration<T> option;
-                
+                IConsideration<TContext> option;
+
                 (score, option) = scoreAndOption;
                 destScore -= score;
 

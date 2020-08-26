@@ -1,23 +1,37 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Monuse.Actions
 {
-    public abstract class ActionWithOptions<TContext, U> : IAction<TContext>
+    public abstract class ActionWithOptions<TContext, TOption> : IAction<TContext>
     {
-        protected List<IActionOptionAppraisal<TContext, U>> _appraisals = new List<IActionOptionAppraisal<TContext, U>>();
+        public readonly IList<IActionOptionAppraisal<TContext, TOption>> Appraisals =
+            new List<IActionOptionAppraisal<TContext, TOption>>();
+
+        public readonly string Name;
+
+        protected ActionWithOptions(string name)
+        {
+            Name = name;
+        }
 
         public abstract void Execute(TContext context);
 
-
-        public U GetBestOption(TContext context, IList<U> options)
+        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
         {
-            var result = default(U);
+            builder.Append(Name);
+        }
+
+
+        public TOption GetBestOption(TContext context, IList<TOption> options)
+        {
+            var result = default(TOption);
             var bestScore = float.MinValue;
 
             foreach (var option in options)
             {
-                var current = _appraisals.Sum(t => t.GetScore(context, option));
+                var current = Appraisals.Sum(t => t.GetScore(context, option));
 
                 if (!(current > bestScore)) continue;
                 bestScore = current;
@@ -27,11 +41,9 @@ namespace Monuse.Actions
             return result;
         }
 
-
-        public ActionWithOptions<TContext, U> AddScorer(IActionOptionAppraisal<TContext, U> scorer)
+        public override string ToString()
         {
-            _appraisals.Add(scorer);
-            return this;
+            return Name;
         }
     }
 }

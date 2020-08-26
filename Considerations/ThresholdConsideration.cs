@@ -4,7 +4,7 @@ namespace Monuse.Considerations
     {
         private readonly float _threshold;
 
-        public ThresholdConsideration(string debugName, float threshold) : base(debugName)
+        public ThresholdConsideration(string name, float threshold) : base(name)
         {
             _threshold = threshold;
         }

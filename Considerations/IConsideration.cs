@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using Monuse.Actions;
 using Monuse.Considerations.Appraisals;
+using Monuse.Utils;
 
 namespace Monuse.Considerations
 {
-    public interface IConsideration<T>
+    public interface IConsideration<TContext> : IPrintable<TContext>
     {
-        IReadOnlyList<IAppraisal<T>> Appraisals { get; }
-        IAction<T> Action { get; set; }
-        string DebugName { get; }
+        IEnumerable<IAppraisal<TContext>> Appraisals { get; }
+        IAction<TContext> Action { get; set; }
+        string Name { get; }
 
-        float GetScore(T context);
+        float GetScore(TContext context);
     }
 }

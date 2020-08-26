@@ -4,7 +4,7 @@ namespace Monuse.Considerations
 {
     public class SumOfChildrenConsideration<T> : BaseConsideration<T>
     {
-        public SumOfChildrenConsideration(string debugName) : base(debugName)
+        public SumOfChildrenConsideration(string name) : base(name)
         {
         }
 
