@@ -9,13 +9,14 @@ namespace Monuse.Reasoners
     /// <typeparam name="TContext">The AI context.</typeparam>
     public class HighestScoreReasoner<TContext> : Reasoner<TContext>
     {
-        public HighestScoreReasoner(string name = null) : base(name)
+        public HighestScoreReasoner(string name) : base(name)
         {
         }
 
         protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
-            var highest = Considerations
+            base.SelectBestConsideration(context);
+            var highest = AllConsiderations
                 .Select(consideration => (consideration.GetScore(context), consideration))
                 .Where(scoreConsideration => scoreConsideration.Item1 > 0f)
                 .OrderByDescending(scoreConsideration => scoreConsideration.Item1)

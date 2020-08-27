@@ -18,7 +18,8 @@ namespace Monuse.Considerations
         /// </summary>
         public readonly float Score;
 
-        public FixedScoreConsideration(string name, float score = 1f, Action<TContext> action = null) : base(name)
+        public FixedScoreConsideration(string name, float score = 1f, Action<TContext> action = null) : base(name,
+            action)
         {
             Score = score;
         }

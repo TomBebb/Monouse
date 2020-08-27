@@ -13,8 +13,7 @@ namespace Monuse.Reasoners
         private readonly Random _rng;
         public readonly float Threshold;
 
-        public RandomScoreAboveThresholdReasoner(Random rng, float threshold = 0f, bool debugEnabled = false,
-            string name = null) : base(name)
+        public RandomScoreAboveThresholdReasoner(string name, Random rng, float threshold = 0f) : base(name)
         {
             _rng = rng;
             Threshold = threshold;
@@ -22,7 +21,8 @@ namespace Monuse.Reasoners
 
         protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
-            var options = Considerations
+            base.SelectBestConsideration(context);
+            var options = AllConsiderations
                 .Select(consideration => (consideration.GetScore(context), consideration))
                 .Where(scoreConsideration => scoreConsideration.Item1 > Threshold)
                 .Select(scoreConsideration => scoreConsideration.consideration)

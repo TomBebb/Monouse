@@ -4,14 +4,13 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{7C14A3BD-5FE8-4BE0-9D28-CD45191D035A}</ProjectGuid>
-        <OutputType>Library</OutputType>
+        <ProjectGuid>{6F4AD005-5BF2-4FDD-ABA6-10860FFC5D06}</ProjectGuid>
+        <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Monuse</RootNamespace>
-        <AssemblyName>Monuse</AssemblyName>
+        <RootNamespace>Example1</RootNamespace>
+        <AssemblyName>Example1</AssemblyName>
         <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
-        <LangVersion>default</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,28 +38,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Actions\ActionExecutor.cs" />
-        <Compile Include="Actions\CompositeAction.cs" />
-        <Compile Include="Actions\Action.cs" />
-        <Compile Include="TimedUtilityExecutor.cs" />
-        <Compile Include="UtilityExecutor.cs" />
-        <Compile Include="Considerations\AllOrNothingConsideration.cs" />
-        <Compile Include="Considerations\Appraisals\ActionAppraisal.cs" />
-        <Compile Include="Considerations\Appraisals\BooleanActionAppraisal.cs" />
-        <Compile Include="Considerations\Appraisals\Appraisal.cs" />
-        <Compile Include="Considerations\AppraisalConsideration.cs" />
-        <Compile Include="Considerations\FixedScoreConsideration.cs" />
-        <Compile Include="Considerations\Consideration.cs" />
-        <Compile Include="Considerations\SumOfChildrenConsideration.cs" />
+        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Reasoners\FirstScoreReasoner.cs" />
-        <Compile Include="Reasoners\HighestScoreReasoner.cs" />
-        <Compile Include="Reasoners\RandomScoreAboveThresholdReasoner.cs" />
-        <Compile Include="Reasoners\Reasoner.cs" />
-        <Compile Include="Reasoners\WeightBasedRandomReasoner.cs" />
-        <Compile Include="Utils\IFormattable.cs" />
-        <Compile Include="Utils\MathExt.cs" />
-        <Compile Include="Utils\RandomExt.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Monuse.csproj">
+        <Project>{7c14a3bd-5fe8-4be0-9d28-cd45191d035a}</Project>
+        <Name>Monuse</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

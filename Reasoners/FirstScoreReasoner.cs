@@ -9,8 +9,13 @@ namespace Monuse.Reasoners
     /// <typeparam name="TContext">The AI context.</typeparam>
     public class FirstScoreReasoner<TContext> : Reasoner<TContext>
     {
+        public FirstScoreReasoner(string name) : base(name)
+        {
+        }
+
         protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
+            base.SelectBestConsideration(context);
             var defaultScore = DefaultConsideration.GetScore(context);
 
             var first = Considerations

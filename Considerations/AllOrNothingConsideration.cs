@@ -1,3 +1,5 @@
+using Monuse.Actions;
+
 namespace Monuse.Considerations
 {
     /// <summary>
@@ -14,7 +16,7 @@ namespace Monuse.Considerations
         /// </summary>
         /// <param name="name">The name of the consideration.</param>
         /// <param name="threshold">The value scores must be above.</param>
-        public AllOrNothingConsideration(string name, float threshold = 0) : base(name)
+        public AllOrNothingConsideration(string name, Action<TContext> action, float threshold = 0) : base(name, action)
         {
             _threshold = threshold;
         }

@@ -20,7 +20,7 @@ namespace Monuse.Considerations
         /// </summary>
         public Action<TContext> Action;
 
-        protected Consideration(string name, Action<TContext> action = null)
+        protected Consideration(string name, Action<TContext> action)
         {
             Name = name;
             Action = action;

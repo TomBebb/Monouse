@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using Monuse.Actions;
 using Monuse.Considerations.Appraisals;
 
 namespace Monuse.Considerations
@@ -13,7 +14,7 @@ namespace Monuse.Considerations
         private readonly IList<Appraisal<TContext>> _appraisals = new List<Appraisal<TContext>>();
 
 
-        protected AppraisalConsideration(string name) : base(name)
+        protected AppraisalConsideration(string name, Action<TContext> action) : base(name, action)
         {
         }
 

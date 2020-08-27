@@ -14,8 +14,7 @@ namespace Monuse.Reasoners
         private readonly Random _rng;
         public readonly float Threshold;
 
-        public WeightBasedRandomReasoner(Random rng, float threshold = 0f,
-            string name = null) : base(name)
+        public WeightBasedRandomReasoner(string name, Random rng, float threshold = 0f) : base(name)
         {
             _rng = rng;
             Threshold = threshold;
@@ -23,13 +22,16 @@ namespace Monuse.Reasoners
 
         protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
-            var scoresAndOptions = Considerations
+            base.SelectBestConsideration(context);
+            var scoresAndOptions = AllConsiderations
                 .Select(consideration => (consideration.GetScore(context), consideration))
                 .Where(scoreConsideration => scoreConsideration.Item1 > Threshold)
                 .ToArray();
 
             var totalScore = scoresAndOptions.Select(scoreAndOption => scoreAndOption.Item1).Sum();
             var destScore = _rng.Next(0f, totalScore);
+
+            Console.WriteLine($"Total score: {totalScore}; Chosen: {destScore}");
 
             foreach (var scoreAndOption in scoresAndOptions)
             {
@@ -40,6 +42,7 @@ namespace Monuse.Reasoners
                 destScore -= score;
 
                 if (!(destScore <= 0f)) continue;
+                Console.WriteLine($"Chosen: {option}");
                 return option;
             }
 

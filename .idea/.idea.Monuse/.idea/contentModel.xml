@@ -21,6 +21,15 @@
         <e p="FixedScoreConsideration.cs" t="Include" />
         <e p="SumOfChildrenConsideration.cs" t="Include" />
       </e>
+      <e p="Example1" t="IncludeRecursive">
+        <e p="Example1.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+      </e>
       <e p="Monuse.csproj" t="IncludeRecursive" />
       <e p="Monuse.sln" t="IncludeFlat" />
       <e p="Properties" t="Include">
@@ -33,9 +42,11 @@
         <e p="Reasoner.cs" t="Include" />
         <e p="WeightBasedRandomReasoner.cs" t="Include" />
       </e>
+      <e p="TimedUtilityExecutor.cs" t="Include" />
       <e p="UtilityExecutor.cs" t="Include" />
       <e p="Utils" t="Include">
         <e p="IFormattable.cs" t="Include" />
+        <e p="MathExt.cs" t="Include" />
         <e p="RandomExt.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />
