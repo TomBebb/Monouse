@@ -1,19 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Monuse.Utils;
 
 namespace Monuse.Actions
 {
     /// <summary>
-    /// Executes multiple actions
+    ///     Executes multiple actions
     /// </summary>
     /// <typeparam name="TContext">AI context</typeparam>
     public sealed class CompositeAction<TContext> : Action<TContext>
     {
         public readonly IList<Action<TContext>> Actions;
 
-        public CompositeAction(string name, IEnumerable<Action<TContext>> actions): base(name)
+        public CompositeAction(string name, IEnumerable<Action<TContext>> actions) : base(name)
         {
             Actions = actions.ToList();
         }

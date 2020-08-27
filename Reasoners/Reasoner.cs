@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Monuse.Actions;
 using Monuse.Considerations;
 using Monuse.Utils;
 
@@ -9,17 +8,12 @@ namespace Monuse.Reasoners
 {
     public abstract class Reasoner<TContext> : IFormattable<TContext>
     {
-        public readonly IList<IConsideration<TContext>> Considerations = new List<IConsideration<TContext>>();
+        public readonly IList<Consideration<TContext>> Considerations = new List<Consideration<TContext>>();
 
         public readonly string Name;
-        public IConsideration<TContext> DefaultConsideration;
+        private Action<string> _handleDebug;
         private bool _shouldDebug;
-        private System.Action<string> _handleDebug;
-
-        public void RequestDebug(System.Action<string> handler)
-        {
-            _shouldDebug = true;
-        }
+        public Consideration<TContext> DefaultConsideration;
 
         protected Reasoner(string name = "")
         {
@@ -41,13 +35,18 @@ namespace Monuse.Reasoners
             }
         }
 
+        public void RequestDebug(Action<string> handler)
+        {
+            _shouldDebug = true;
+        }
+
         public Actions.Action<TContext> Select(TContext context)
         {
             var consideration = SelectBestConsideration(context);
             return consideration?.Action;
         }
 
-        protected virtual IConsideration<TContext> SelectBestConsideration(TContext context)
+        protected virtual Consideration<TContext> SelectBestConsideration(TContext context)
         {
             if (_shouldDebug)
             {

@@ -1,17 +1,16 @@
 using System;
-using System.Text;
 
 namespace Monuse.Considerations.Appraisals
 {
     /// <summary>
-    ///  Wraps a Func / C# action for use as an Appraisal without having to create a subclass
+    ///     Wraps a Func / C# action for use as an Appraisal without having to create a subclass
     /// </summary>
     public class ActionAppraisal<TContext> : Appraisal<TContext>
     {
         private readonly Func<TContext, float> _appraisalAction;
 
 
-        public ActionAppraisal(string name, Func<TContext, float> appraisalAction): base(name)
+        public ActionAppraisal(string name, Func<TContext, float> appraisalAction) : base(name)
         {
             _appraisalAction = appraisalAction;
         }

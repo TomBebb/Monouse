@@ -2,14 +2,14 @@ using Monuse.Reasoners;
 
 namespace Monuse
 {
-    public sealed class AI<T>
+    public sealed class UtilityExecutor<TContext>
     {
-        private readonly T _context;
-        public readonly Reasoner<T> RootReasoner;
+        private readonly TContext _context;
+        public readonly Reasoner<TContext> RootReasoner;
         public readonly float UpdatePeriod;
         private float _untilUpdate;
 
-        public AI(T context, Reasoner<T> rootSelector, float updatePeriod = 0.05f)
+        public UtilityExecutor(TContext context, Reasoner<TContext> rootSelector, float updatePeriod = 0.05f)
         {
             _context = context;
             RootReasoner = rootSelector;

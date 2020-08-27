@@ -1,6 +1,4 @@
-using System;
 using System.Text;
-using Monuse.Utils;
 
 namespace Monuse.Actions
 {
@@ -12,7 +10,7 @@ namespace Monuse.Actions
     {
         private readonly System.Action<TContext> _action;
 
-        public ActionExecutor(string name, System.Action<TContext> action): base(name)
+        public ActionExecutor(string name, System.Action<TContext> action) : base(name)
         {
             _action = action;
         }

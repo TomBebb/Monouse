@@ -4,7 +4,11 @@ using Monuse.Considerations;
 
 namespace Monuse.Reasoners
 {
-    public class RandomScoreAboveThresholdReasoner<T> : Reasoner<T>
+    /// <summary>
+    ///     Selects a random score above a threshold.
+    /// </summary>
+    /// <typeparam name="TContext">The AI context.</typeparam>
+    public class RandomScoreAboveThresholdReasoner<TContext> : Reasoner<TContext>
     {
         private readonly Random _rng;
         public readonly float Threshold;
@@ -16,7 +20,7 @@ namespace Monuse.Reasoners
             Threshold = threshold;
         }
 
-        protected override IConsideration<T> SelectBestConsideration(T context)
+        protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
             var options = Considerations
                 .Select(consideration => (consideration.GetScore(context), consideration))

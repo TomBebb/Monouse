@@ -1,5 +1,4 @@
 using System.Text;
-using Microsoft.SqlServer.Server;
 using Monuse.Utils;
 
 namespace Monuse.Actions
@@ -15,7 +14,7 @@ namespace Monuse.Actions
     public abstract class Action<TContext> : IFormattable<TContext>
     {
         /// <summary>
-        /// The name of this action.
+        ///     The name of this action.
         /// </summary>
         public readonly string Name;
 
@@ -24,17 +23,17 @@ namespace Monuse.Actions
             Name = name;
         }
 
-        /// <summary>
-        ///     Do the action.
-        /// </summary>
-        /// <param name="context">AI context</param>
-        public abstract void Execute(TContext context);
-        
 
         public virtual void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
             builder.Append(Name);
         }
+
+        /// <summary>
+        ///     Do the action.
+        /// </summary>
+        /// <param name="context">AI context</param>
+        public abstract void Execute(TContext context);
 
         public override string ToString()
         {

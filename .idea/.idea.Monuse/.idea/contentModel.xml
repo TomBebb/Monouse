@@ -4,7 +4,6 @@
     <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Monuse.-300640699.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
-      <e p="AI.cs" t="Include" />
       <e p="Actions" t="Include">
         <e p="Action.cs" t="Include" />
         <e p="ActionExecutor.cs" t="Include" />
@@ -12,16 +11,15 @@
       </e>
       <e p="Considerations" t="Include">
         <e p="AllOrNothingConsideration.cs" t="Include" />
+        <e p="AppraisalConsideration.cs" t="Include" />
         <e p="Appraisals" t="Include">
           <e p="ActionAppraisal.cs" t="Include" />
           <e p="Appraisal.cs" t="Include" />
           <e p="BooleanActionAppraisal.cs" t="Include" />
         </e>
-        <e p="BaseConsideration.cs" t="Include" />
+        <e p="Consideration.cs" t="Include" />
         <e p="FixedScoreConsideration.cs" t="Include" />
-        <e p="IConsideration.cs" t="Include" />
         <e p="SumOfChildrenConsideration.cs" t="Include" />
-        <e p="ThresholdConsideration.cs" t="Include" />
       </e>
       <e p="Monuse.csproj" t="IncludeRecursive" />
       <e p="Monuse.sln" t="IncludeFlat" />
@@ -35,6 +33,7 @@
         <e p="Reasoner.cs" t="Include" />
         <e p="WeightBasedRandomReasoner.cs" t="Include" />
       </e>
+      <e p="UtilityExecutor.cs" t="Include" />
       <e p="Utils" t="Include">
         <e p="IFormattable.cs" t="Include" />
         <e p="RandomExt.cs" t="Include" />

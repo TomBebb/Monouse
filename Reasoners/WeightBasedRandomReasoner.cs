@@ -21,7 +21,7 @@ namespace Monuse.Reasoners
             Threshold = threshold;
         }
 
-        protected override IConsideration<TContext> SelectBestConsideration(TContext context)
+        protected override Consideration<TContext> SelectBestConsideration(TContext context)
         {
             var scoresAndOptions = Considerations
                 .Select(consideration => (consideration.GetScore(context), consideration))
@@ -34,7 +34,7 @@ namespace Monuse.Reasoners
             foreach (var scoreAndOption in scoresAndOptions)
             {
                 float score;
-                IConsideration<TContext> option;
+                Consideration<TContext> option;
 
                 (score, option) = scoreAndOption;
                 destScore -= score;

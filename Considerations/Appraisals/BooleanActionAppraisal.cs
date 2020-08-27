@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 
 namespace Monuse.Considerations.Appraisals
 {
@@ -12,7 +11,8 @@ namespace Monuse.Considerations.Appraisals
         private readonly float _scoreMultiplier;
 
 
-        public BooleanActionAppraisal(string name, Func<TContext, bool> appraisalAction, float scoreMultiplier = 1f): base(name)
+        public BooleanActionAppraisal(string name, Func<TContext, bool> appraisalAction, float scoreMultiplier = 1f) :
+            base(name)
         {
             _appraisalAction = appraisalAction;
             _scoreMultiplier = scoreMultiplier;

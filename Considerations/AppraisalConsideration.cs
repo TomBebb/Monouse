@@ -1,26 +1,25 @@
 using System.Collections.Generic;
 using System.Text;
-using Monuse.Actions;
 using Monuse.Considerations.Appraisals;
 
 namespace Monuse.Considerations
 {
-    public abstract class BaseConsideration<TContext> : IConsideration<TContext>
+    /// <summary>
+    ///     A choice that can check appraisal scores.
+    /// </summary>
+    /// <typeparam name="TContext">The AI context.</typeparam>
+    public abstract class AppraisalConsideration<TContext> : Consideration<TContext>
     {
         private readonly IList<Appraisal<TContext>> _appraisals = new List<Appraisal<TContext>>();
 
 
-        protected BaseConsideration(string name)
+        protected AppraisalConsideration(string name) : base(name)
         {
-            Name = name;
         }
 
         public IEnumerable<Appraisal<TContext>> Appraisals => _appraisals;
-        public Action<TContext> Action { get; set; }
-        public string Name { get; protected set; }
-        public abstract float GetScore(TContext context);
 
-        public void FormatTo(TContext context, StringBuilder builder, int tabCount)
+        public override void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
             builder.AppendFormat("consideration {0}: {1}", Name, GetScore(context));
 
@@ -34,16 +33,20 @@ namespace Monuse.Considerations
             }
         }
 
-        public override string ToString()
-        {
-            return Name;
-        }
-
+        /// <summary>
+        ///     Add an appraisal to the consideration.
+        /// </summary>
+        /// <param name="appraisal">The appraisal to add.</param>
         public void AddAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Add(appraisal);
         }
 
+
+        /// <summary>
+        ///     Remove an appraisal to the consideration.
+        /// </summary>
+        /// <param name="appraisal">The appraisal to remove.</param>
         public void RemoveAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Remove(appraisal);

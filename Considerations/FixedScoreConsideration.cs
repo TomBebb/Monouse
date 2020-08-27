@@ -6,29 +6,38 @@ using Monuse.Considerations.Appraisals;
 
 namespace Monuse.Considerations
 {
-    public class FixedScoreConsideration<TContext> : IConsideration<TContext>
+    /// <summary>
+    ///     A choice with a fixed score.
+    ///     Suitable for testing certain scenarios.
+    /// </summary>
+    /// <typeparam name="TContext"></typeparam>
+    public class FixedScoreConsideration<TContext> : Consideration<TContext>
     {
-        public float Score;
+        /// <summary>
+        ///     The score of this consideration.
+        /// </summary>
+        public readonly float Score;
 
-        public FixedScoreConsideration(string debugName, float score = 1f)
+        public FixedScoreConsideration(string name, float score = 1f, Action<TContext> action = null) : base(name)
         {
-            Name = debugName;
             Score = score;
         }
 
-        public IEnumerable<Appraisal<TContext>> Appraisals => Enumerable.Empty<Appraisal<TContext>>();
-        public Action<TContext> Action { get; set; }
+        public virtual IEnumerable<Appraisal<TContext>> Appraisals => Enumerable.Empty<Appraisal<TContext>>();
 
-        public string Name { get; }
-
-        public float GetScore(TContext context)
+        public override float GetScore(TContext context)
         {
             return Score;
         }
 
-        public void FormatTo(TContext context, StringBuilder builder, int tabCount)
+        public override void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
-            builder.Append(Score);
+            builder.Append(ToString());
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}: fixed at {Score}";
         }
     }
 }
