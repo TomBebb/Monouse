@@ -6,19 +6,16 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="AI.cs" t="Include" />
       <e p="Actions" t="Include">
+        <e p="Action.cs" t="Include" />
         <e p="ActionExecutor.cs" t="Include" />
-        <e p="ActionWithOptions.cs" t="Include" />
         <e p="CompositeAction.cs" t="Include" />
-        <e p="IAction.cs" t="Include" />
-        <e p="IActionOptionAppraisal.cs" t="Include" />
-        <e p="LogAction.cs" t="Include" />
       </e>
       <e p="Considerations" t="Include">
         <e p="AllOrNothingConsideration.cs" t="Include" />
         <e p="Appraisals" t="Include">
           <e p="ActionAppraisal.cs" t="Include" />
+          <e p="Appraisal.cs" t="Include" />
           <e p="BooleanActionAppraisal.cs" t="Include" />
-          <e p="IAppraisal.cs" t="Include" />
         </e>
         <e p="BaseConsideration.cs" t="Include" />
         <e p="FixedScoreConsideration.cs" t="Include" />
@@ -39,7 +36,7 @@
         <e p="WeightBasedRandomReasoner.cs" t="Include" />
       </e>
       <e p="Utils" t="Include">
-        <e p="IPrintable.cs" t="Include" />
+        <e p="IFormattable.cs" t="Include" />
         <e p="RandomExt.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />

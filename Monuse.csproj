@@ -40,16 +40,13 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Actions\ActionExecutor.cs" />
-        <Compile Include="Actions\ActionWithOptions.cs" />
         <Compile Include="Actions\CompositeAction.cs" />
-        <Compile Include="Actions\IAction.cs" />
-        <Compile Include="Actions\IActionOptionAppraisal.cs" />
-        <Compile Include="Actions\LogAction.cs" />
+        <Compile Include="Actions\Action.cs" />
         <Compile Include="AI.cs" />
         <Compile Include="Considerations\AllOrNothingConsideration.cs" />
         <Compile Include="Considerations\Appraisals\ActionAppraisal.cs" />
         <Compile Include="Considerations\Appraisals\BooleanActionAppraisal.cs" />
-        <Compile Include="Considerations\Appraisals\IAppraisal.cs" />
+        <Compile Include="Considerations\Appraisals\Appraisal.cs" />
         <Compile Include="Considerations\BaseConsideration.cs" />
         <Compile Include="Considerations\FixedScoreConsideration.cs" />
         <Compile Include="Considerations\IConsideration.cs" />
@@ -61,7 +58,7 @@
         <Compile Include="Reasoners\RandomScoreAboveThresholdReasoner.cs" />
         <Compile Include="Reasoners\Reasoner.cs" />
         <Compile Include="Reasoners\WeightBasedRandomReasoner.cs" />
-        <Compile Include="Utils\IPrintable.cs" />
+        <Compile Include="Utils\IFormattable.cs" />
         <Compile Include="Utils\RandomExt.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,16 +7,16 @@ using Monuse.Utils;
 
 namespace Monuse.Reasoners
 {
-    public abstract class Reasoner<TContext> : IPrintable<TContext>
+    public abstract class Reasoner<TContext> : IFormattable<TContext>
     {
         public readonly IList<IConsideration<TContext>> Considerations = new List<IConsideration<TContext>>();
 
         public readonly string Name;
         public IConsideration<TContext> DefaultConsideration;
         private bool _shouldDebug;
-        private Action<string> _handleDebug;
+        private System.Action<string> _handleDebug;
 
-        public void RequestDebug(Action<string> handler)
+        public void RequestDebug(System.Action<string> handler)
         {
             _shouldDebug = true;
         }
@@ -26,7 +26,7 @@ namespace Monuse.Reasoners
             Name = name;
         }
 
-        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
+        public void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
             builder.Append(Name);
             builder.Append(": ");
@@ -37,11 +37,11 @@ namespace Monuse.Reasoners
             {
                 builder.AppendLine();
                 builder.Append(tabs);
-                consideration.PrintTo(context, builder, tabCount + 1);
+                consideration.FormatTo(context, builder, tabCount + 1);
             }
         }
 
-        public IAction<TContext> Select(TContext context)
+        public Actions.Action<TContext> Select(TContext context)
         {
             var consideration = SelectBestConsideration(context);
             return consideration?.Action;
@@ -52,7 +52,7 @@ namespace Monuse.Reasoners
             if (_shouldDebug)
             {
                 var textBuilder = new StringBuilder();
-                PrintTo(context, textBuilder, 0);
+                FormatTo(context, textBuilder, 0);
                 _shouldDebug = false;
                 _handleDebug(textBuilder.ToString());
             }

@@ -5,10 +5,10 @@ using Monuse.Utils;
 
 namespace Monuse.Considerations
 {
-    public interface IConsideration<TContext> : IPrintable<TContext>
+    public interface IConsideration<TContext> : IFormattable<TContext>
     {
-        IEnumerable<IAppraisal<TContext>> Appraisals { get; }
-        IAction<TContext> Action { get; set; }
+        IEnumerable<Appraisal<TContext>> Appraisals { get; }
+        Action<TContext> Action { get; set; }
         string Name { get; }
 
         float GetScore(TContext context);

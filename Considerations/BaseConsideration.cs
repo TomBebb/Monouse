@@ -7,7 +7,7 @@ namespace Monuse.Considerations
 {
     public abstract class BaseConsideration<TContext> : IConsideration<TContext>
     {
-        private readonly IList<IAppraisal<TContext>> _appraisals = new List<IAppraisal<TContext>>();
+        private readonly IList<Appraisal<TContext>> _appraisals = new List<Appraisal<TContext>>();
 
 
         protected BaseConsideration(string name)
@@ -15,12 +15,12 @@ namespace Monuse.Considerations
             Name = name;
         }
 
-        public IEnumerable<IAppraisal<TContext>> Appraisals => _appraisals;
-        public IAction<TContext> Action { get; set; }
+        public IEnumerable<Appraisal<TContext>> Appraisals => _appraisals;
+        public Action<TContext> Action { get; set; }
         public string Name { get; protected set; }
         public abstract float GetScore(TContext context);
 
-        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
+        public void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
             builder.AppendFormat("consideration {0}: {1}", Name, GetScore(context));
 
@@ -30,7 +30,7 @@ namespace Monuse.Considerations
             {
                 builder.AppendLine();
                 builder.Append(appraisalTabs);
-                appraisal.PrintTo(context, builder, tabCount + 1);
+                appraisal.FormatTo(context, builder, tabCount + 1);
             }
         }
 
@@ -39,12 +39,12 @@ namespace Monuse.Considerations
             return Name;
         }
 
-        public void AddAppraisal(IAppraisal<TContext> appraisal)
+        public void AddAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Add(appraisal);
         }
 
-        public void RemoveAppraisal(IAppraisal<TContext> appraisal)
+        public void RemoveAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Remove(appraisal);
         }

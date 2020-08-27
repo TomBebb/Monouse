@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbf60f6d-80d6-4c50-8b9a-d940da882068" name="Default Changelist" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Monuse/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Monuse/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/ActionExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Actions/ActionExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/ActionWithOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/CompositeAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Actions/CompositeAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/IAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Actions/Action.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/IActionOptionAppraisal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actions/LogAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/Appraisals/ActionAppraisal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/Appraisals/ActionAppraisal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/Appraisals/BooleanActionAppraisal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/Appraisals/BooleanActionAppraisal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/Appraisals/IAppraisal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/Appraisals/Appraisal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/BaseConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/BaseConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/FixedScoreConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/FixedScoreConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Considerations/IConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Considerations/IConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monuse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Monuse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reasoners/Reasoner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reasoners/Reasoner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/IPrintable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/IFormattable.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Reasoners/DualReasoner.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Class1.cs" />
+        <option value="$PROJECT_DIR$/IAction.cs" />
+        <option value="$PROJECT_DIR$/Action.cs" />
+        <option value="$PROJECT_DIR$/IOption.cs" />
+        <option value="$PROJECT_DIR$/IConsideration.cs" />
+        <option value="$PROJECT_DIR$/Utils/RandomExt.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/RandomScoreAboveThresholdReasoner.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/HighestScoreReasoner.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/FirstScoreReasoner.cs" />
+        <option value="$PROJECT_DIR$/Considerations/Appraisals/ProximityAxis.cs" />
+        <option value="$PROJECT_DIR$/Considerations/AppraisalConsideration.cs" />
+        <option value="$PROJECT_DIR$/Considerations/SumOfChildrenConsideration.cs" />
+        <option value="$PROJECT_DIR$/Considerations/ThresholdConsideration.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/AbsoluteReasoner.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/RelativeReasoner.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/DualReasoner.cs" />
+        <option value="$PROJECT_DIR$/Considerations/AllOrNothingConsideration.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/WeightBasedRandomReasoner.cs" />
+        <option value="$PROJECT_DIR$/Considerations/IConsideration.cs" />
+        <option value="$PROJECT_DIR$/Utils/NullEnumerable.cs" />
+        <option value="$PROJECT_DIR$/Considerations/FixedScoreConsideration.cs" />
+        <option value="$PROJECT_DIR$/Considerations/BaseConsideration.cs" />
+        <option value="$PROJECT_DIR$/Utils/IPrintable.cs" />
+        <option value="$PROJECT_DIR$/Actions/LogAction.cs" />
+        <option value="$PROJECT_DIR$/Reasoners/Reasoner.cs" />
+        <option value="$PROJECT_DIR$/Actions/ActionWithOptions.cs" />
+        <option value="$PROJECT_DIR$/Utils/IFormattable.cs" />
+        <option value="$PROJECT_DIR$/Considerations/Appraisals/IAppraisal.cs" />
+        <option value="$PROJECT_DIR$/Considerations/Appraisals/BooleanActionAppraisal.cs" />
+        <option value="$PROJECT_DIR$/Considerations/Appraisals/ActionAppraisal.cs" />
+        <option value="$PROJECT_DIR$/Considerations/Appraisals/Appraisal.cs" />
+        <option value="$PROJECT_DIR$/Actions/IAction.cs" />
+        <option value="$PROJECT_DIR$/Actions/Action.cs" />
+        <option value="$PROJECT_DIR$/Actions/CompositeAction.cs" />
+        <option value="$PROJECT_DIR$/Actions/ActionExecutor.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ge8UDWtJnyBOjebJBaQcnYTL9o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Reasoners" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="705" y="364" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1598486049722">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="705" y="364" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1044@0.0.1920.1044" timestamp="1598486049722" />
+    <state x="1224" y="277" width="432" height="489" key="FileChooserDialogImpl" timestamp="1598472451244">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="1224" y="277" width="432" height="489" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1598472451244" />
+    <state x="1257" y="172" key="RiderGenerateDialog" timestamp="1598487132738">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="1257" y="172" key="RiderGenerateDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1598487132738" />
+    <state x="668" y="212" key="RollbackChangesDialog" timestamp="1598477492465">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="668" y="212" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1598477492465" />
+    <state x="457" y="156" key="SettingsEditor" timestamp="1598486852134">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="457" y="156" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1598486852134" />
+    <state x="556" y="243" key="Vcs.Push.Dialog.v2" timestamp="1598475029270">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="556" y="243" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1598475029270" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598485943011">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1598485943011" />
+  </component>
+</project>

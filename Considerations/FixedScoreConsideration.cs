@@ -16,8 +16,8 @@ namespace Monuse.Considerations
             Score = score;
         }
 
-        public IEnumerable<IAppraisal<TContext>> Appraisals => Enumerable.Empty<IAppraisal<TContext>>();
-        public IAction<TContext> Action { get; set; }
+        public IEnumerable<Appraisal<TContext>> Appraisals => Enumerable.Empty<Appraisal<TContext>>();
+        public Action<TContext> Action { get; set; }
 
         public string Name { get; }
 
@@ -26,7 +26,7 @@ namespace Monuse.Considerations
             return Score;
         }
 
-        public void PrintTo(TContext context, StringBuilder builder, int tabCount)
+        public void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
             builder.Append(Score);
         }
