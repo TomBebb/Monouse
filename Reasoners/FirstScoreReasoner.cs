@@ -9,7 +9,8 @@ namespace Monuse.Reasoners
     /// <typeparam name="TContext">The AI context.</typeparam>
     public class FirstScoreReasoner<TContext> : Reasoner<TContext>
     {
-        public FirstScoreReasoner(string name) : base(name)
+        public FirstScoreReasoner(string name, Consideration<TContext> defaultConsideration) : base(name,
+            defaultConsideration)
         {
         }
 

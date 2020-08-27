@@ -14,7 +14,8 @@ namespace Monuse.Reasoners
         private readonly Random _rng;
         public readonly float Threshold;
 
-        public WeightBasedRandomReasoner(string name, Random rng, float threshold = 0f) : base(name)
+        public WeightBasedRandomReasoner(string name, Random rng, Consideration<TContext> defaultConsideration,
+            float threshold = 0f) : base(name, defaultConsideration)
         {
             _rng = rng;
             Threshold = threshold;

@@ -38,9 +38,10 @@ namespace Monuse.Considerations
         ///     Add an appraisal to the consideration.
         /// </summary>
         /// <param name="appraisal">The appraisal to add.</param>
-        public void AddAppraisal(Appraisal<TContext> appraisal)
+        public AppraisalConsideration<TContext> AddAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Add(appraisal);
+            return this;
         }
 
 
@@ -48,9 +49,10 @@ namespace Monuse.Considerations
         ///     Remove an appraisal to the consideration.
         /// </summary>
         /// <param name="appraisal">The appraisal to remove.</param>
-        public void RemoveAppraisal(Appraisal<TContext> appraisal)
+        public AppraisalConsideration<TContext> RemoveAppraisal(Appraisal<TContext> appraisal)
         {
             _appraisals.Remove(appraisal);
+            return this;
         }
     }
 }

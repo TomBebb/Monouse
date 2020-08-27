@@ -13,7 +13,8 @@ namespace Monuse.Reasoners
         private readonly Random _rng;
         public readonly float Threshold;
 
-        public RandomScoreAboveThresholdReasoner(string name, Random rng, float threshold = 0f) : base(name)
+        public RandomScoreAboveThresholdReasoner(string name, Random rng, Consideration<TContext> defaultConsideration,
+            float threshold = 0f) : base(name, defaultConsideration)
         {
             _rng = rng;
             Threshold = threshold;

@@ -21,18 +21,17 @@ namespace Example1
 
             var moveAction = new ActionExecutor<AIDemo>("MoveAction", d => Console.WriteLine("MOVING"));
 
-            var reasoner = new WeightBasedRandomReasoner<AIDemo>("AIDemo reasoner", new Random())
-            {
-                DefaultConsideration = new FixedScoreConsideration<AIDemo>("DefaultConsideration", 0.1f,
-                    new ActionExecutor<AIDemo>("DefaultAction", d2 => Console.WriteLine("DEFAULT")))
-            };
+            var defaultConsideration = new FixedScoreConsideration<AIDemo>("DefaultConsideration", 0.1f,
+                new ActionExecutor<AIDemo>("DefaultAction", d2 => Console.WriteLine("DEFAULT")));
+
+            var reasoner = new WeightBasedRandomReasoner<AIDemo>("AIDemo reasoner", new Random(), defaultConsideration);
 
             var moveConsideration = new SumOfChildrenConsideration<AIDemo>("MoveConsideration", moveAction);
 
             moveConsideration.AddAppraisal(new ActionAppraisal<AIDemo>("CheckCounter",
                 d => MathExt.Clamp((float) Math.Pow(d.Counter / 40f, 2f), 0f, 1f)));
 
-            reasoner.Considerations.Add(moveConsideration);
+            reasoner.AddConsideration(moveConsideration);
 
             var executor = new UtilityExecutor<AIDemo>(demo, reasoner);
 

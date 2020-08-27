@@ -9,20 +9,23 @@ namespace Monuse.Reasoners
 {
     public abstract class Reasoner<TContext> : IFormattable<TContext>
     {
-        public readonly IList<Consideration<TContext>> Considerations = new List<Consideration<TContext>>();
+        private readonly IList<Consideration<TContext>> _considerations = new List<Consideration<TContext>>();
 
         public readonly string Name;
         private Action<string> _handleDebug;
         private bool _shouldDebug;
         public Consideration<TContext> DefaultConsideration;
 
-        protected Reasoner(string name)
+        protected Reasoner(string name, Consideration<TContext> defaultConsideration)
         {
             Name = name;
+            DefaultConsideration = defaultConsideration;
         }
 
+        public IEnumerable<Consideration<TContext>> Considerations => _considerations;
+
         public IEnumerable<Consideration<TContext>> AllConsiderations =>
-            Considerations.Concat(new[] {DefaultConsideration});
+            _considerations.Concat(new[] {DefaultConsideration});
 
         public void FormatTo(TContext context, StringBuilder builder, int tabCount)
         {
@@ -40,7 +43,7 @@ namespace Monuse.Reasoners
                 DefaultConsideration.FormatTo(context, builder, tabCount + 1);
             }
 
-            foreach (var consideration in Considerations)
+            foreach (var consideration in _considerations)
             {
                 builder.AppendLine();
                 builder.Append(tabs);
@@ -75,6 +78,18 @@ namespace Monuse.Reasoners
             }
 
             return null;
+        }
+
+        public Reasoner<TContext> AddConsideration(Consideration<TContext> consideration)
+        {
+            _considerations.Add(consideration);
+            return this;
+        }
+
+        public Reasoner<TContext> RemoveConsideration(Consideration<TContext> consideration)
+        {
+            _considerations.Remove(consideration);
+            return this;
         }
 
         public override string ToString()
